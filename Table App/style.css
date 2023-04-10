@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.row-container,
+th,
+td {
+  border: solid 1px black;
+}
+
+.btn-holder {
+  /* position: absolute; */
+  margin-left: 50%;
+  font-size: 50px;
+}
