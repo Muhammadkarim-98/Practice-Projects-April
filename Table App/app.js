@@ -1,46 +1,32 @@
-// selectors
+// Selectors
 const btn = document.querySelector(".sub-btn");
-const table = document.querySelector(".table");
-const rContainer = document.querySelector('.row-container')
-// Events
-document.addEventListener('DOMContentLoaded', () => {
-	const tr = rContainer.createElement("tr");
-	tr.classList.add("oneContainer");
+const tableBody = document.querySelector(".tabBody");
+const rContainer = document.querySelector(".row-container");
 
-	tr.innerHTML = `<td><input type="text" class="inp" /></td>
+// Events
+const rowContainer = `<tr class="row-container">
           <td><input type="text" class="inp" /></td>
           <td><input type="text" class="inp" /></td>
           <td><input type="text" class="inp" /></td>
           <td><input type="text" class="inp" /></td>
-          `;
-	rContainer.appendChild(tr);
-})
-// CLICK EVENT
+          <td><input type="text" class="inp" /></td>
+</tr>
+`;
+tableBody.innerHTML = rowContainer;
 btn.addEventListener("click", addRow);
-const input = document.querySelectorAll(".inp");
-// Funtions
+// Functions
 function addRow() {
-	let addRow = false;
-	for (let i = 0; input.length > 0; i++) {
-		if (input[i].value !== "") {
-			addRow = true;
+	const lastRow = tableBody.lastElementChild;
+	const inpValue = lastRow.getElementsByClassName("inp");
+	for (let i = 0; i < inpValue.length; i++) {
+		if (inpValue[i].value === '') {
+			// console.log(inpValue[i].value)
+			alert("Please do'nt skip any input!");
+			break;
+		} else {
+			// tableBody.innerHTML += rowContainer;
+			console.log('added')
 			break;
 		}
-	}
-
-	if (addRow === true) {
-		// const tr = document.createElement("tr");
-		// tr.classList.add("row-container");
-
-		// tr.innerHTML = `  <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>
-		//       <td><input type="text" class="inp" /></td>`;
-
-		// table.appendChild(tr);
 	}
 }
