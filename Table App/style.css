@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: blanchedalmond;
 }
 
 .row-container,
@@ -9,8 +10,35 @@ td {
   border: solid 1px black;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-holder {
-  /* position: absolute; */
-  margin-left: 50%;
-  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.sub-btn {
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  color: darkblue;
+  font-size: large;
+}
+
+.sub-btn:hover {
+  transition: all 2s green;
+  width: 200px;
+  border-color: red;
+}
+
+button {
+  border-radius: 30px;
+  border-color: green;
 }

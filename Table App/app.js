@@ -14,22 +14,21 @@ const rowContainer = `<tr class="row-container">
 tableBody.innerHTML = rowContainer;
 btn.addEventListener("click", addRow);
 // Functions
+
 let s = 0;
 
 function addRow() {
 	let lastRow = tableBody.lastElementChild;
-	const inpValue = lastRow.getElementsByTagName('input');
+	const inpValue = lastRow.getElementsByTagName("input");
 	for (let i = 0; i < inpValue.length; i++) {
 		if (!inpValue[i].value) {
-			s++
+			s++;
+			alert("Please do'nt skip any input!");
+			break;
 		}
-
 	}
 	if (s === 0) {
 		tableBody.innerHTML += rowContainer;
 	}
-	console.log(s)
 	s = 0;
-
 }
-// console.log(s)
