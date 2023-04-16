@@ -3,16 +3,21 @@ import data from "./data.js";
 const headContainer = document.querySelector(".headCont");
 const bodyContainer = document.querySelector(".bodyCont");
 const inputEl = document.getElementById('input');
-const btn = document.querySelector('.btn');
 // Event
 inputEl.addEventListener('keyup', generateSearch)
+const thead = headContainer.getElementsByTagName('th');
+
 // Functions
 function generateSearch(event) {
-  event.preventDefault();
+  // event.preventDefault();
   const filter = inputEl.value.toUpperCase();
-  const td = document.getElementsByTagName('td');
-  for (let i = 0; i < td.length; i++) {
-    // Just pending.
+  const tr = bodyContainer.getElementsByTagName('tr');
+  for (let i = 0; i < tr.length; i++) {
+    const txtValue = tr[i].textContent;
+    console.log(tr.length);
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = '';
+    } else { tr[i].style.display = 'none' }
   }
 };
 
@@ -23,6 +28,7 @@ function generateTh() {
   for (let i = 0; i < keys.length; i++) {
     tr.innerHTML += `<th>${keys[i]}</th>`;
   }
+  console.log(thead[0].textContent)
 }
 
 function generateTd() {
@@ -38,18 +44,3 @@ function generateTd() {
 
 generateTh();
 generateTd();
-
-
-
-
-
-// event.preventDefault();
-// for (let x = 0; x < data.length; x++) {
-//   let name = data[x].name;
-//   const inputVal = inputEl.value;
-//   for (let i = 0; i < name.length; i++) {
-
-//     console.log(name[i], inputEl[x])
-
-//   }
-// }
