@@ -5,7 +5,7 @@ const ulEl = document.querySelector('.list');
 let list = JSON.parse(localStorage.getItem('list'));
 if (list) {
 	list.forEach((task) => {
-		toDoList();
+		toDoList(task);
 	});
 };
 
@@ -35,9 +35,13 @@ function toDoList(task) {
 	trashBtnEl.innerHTML = `  <i class="fas fa-trash"></i>
 `;
 	liEl.appendChild(trashBtnEl);
-
+	const btnBox = document.createElement('div');
+	btnBox.classList.add('btnBox');
+	btnBox.appendChild(checkBtnEl);
+	btnBox.appendChild(trashBtnEl);
+	liEl.appendChild(btnBox);
 	checkBtnEl.addEventListener('click', () => {
-		liEl.classList.toggle('ckecked');
+		liEl.classList.toggle('checked');
 		updateLocalStorage();
 	});
 	trashBtnEl.addEventListener('click', () => {

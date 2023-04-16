@@ -2,14 +2,38 @@
   padding: 0;
   margin: 0;
   font-family: "Roboto Mono", monospace;
-  /* background-color: gray; */
 }
 
 .form {
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(7, 246, 31);
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: yellow;
+}
+
+.checked {
+  background-color: gray;
+  opacity: 0.5;
+}
+
+.btnBox {
+  margin-right: 30px;
+  width: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa-trash {
+  padding-left: 10px;
 }
 
 .input {
