@@ -8,3 +8,7 @@ td {
   border: 2px solid gray;
   padding: 5px;
 }
+
+.form {
+  margin: 10px 0;
+}

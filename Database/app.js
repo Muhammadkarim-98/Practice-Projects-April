@@ -1,10 +1,21 @@
 import data from "./data.js";
 // Selectors
-const tabContainer = document.querySelector(".tableContainer");
 const headContainer = document.querySelector(".headCont");
 const bodyContainer = document.querySelector(".bodyCont");
-
+const inputEl = document.getElementById('input');
+const btn = document.querySelector('.btn');
+// Event
+inputEl.addEventListener('keyup', generateSearch)
 // Functions
+function generateSearch(event) {
+  event.preventDefault();
+  const filter = inputEl.value.toUpperCase();
+  const td = document.getElementsByTagName('td');
+  for (let i = 0; i < td.length; i++) {
+    // Just pending.
+  }
+};
+
 function generateTh() {
   const tr = document.createElement("tr");
   headContainer.appendChild(tr);
@@ -27,3 +38,18 @@ function generateTd() {
 
 generateTh();
 generateTd();
+
+
+
+
+
+// event.preventDefault();
+// for (let x = 0; x < data.length; x++) {
+//   let name = data[x].name;
+//   const inputVal = inputEl.value;
+//   for (let i = 0; i < name.length; i++) {
+
+//     console.log(name[i], inputEl[x])
+
+//   }
+// }
